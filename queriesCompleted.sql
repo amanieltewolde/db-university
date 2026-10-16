@@ -8,7 +8,6 @@ SELECT *
 FROM courses
 WHERE cfu > '10';
 
-
 -- 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del
 --     20/06/2020 (21)
 SELECT *
@@ -19,3 +18,7 @@ WHERE `date` = '2020/06/20' AND `hour` > '14:00:00';
 SELECT *
 FROM degrees
 WHERE `level` = 'magistrale';
+
+-- 7. Da quanti dipartimenti è composta l'università? (12)
+SELECT COUNT(*) AS tot_departments
+FROM departments;
