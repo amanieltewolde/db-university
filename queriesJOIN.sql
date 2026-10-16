@@ -17,9 +17,9 @@ WHERE departments.name = 'Dipartimento di Neuroscienze' AND degrees.`level` = 'm
 SELECT teachers.name, teachers.surname, courses.name AS Fulvio_Amato_courses
 FROM courses
 JOIN course_teacher
-ON course_id = course_teacher.course_id 
+ON courses.id = course_teacher.course_id 
 JOIN teachers
-ON course_teacher.teacher_id = teacher_id 
+ON course_teacher.teacher_id = teachers.id 
 WHERE teachers.id = 44;
 
 -- 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
