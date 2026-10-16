@@ -13,3 +13,8 @@ ORDER BY office_address;
 SELECT AVG(vote) AS Avg_votes_per_exam, exam_id
 FROM exam_student
 GROUP BY exam_id;
+
+-- 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT COUNT(*) AS degrees_per_departments, department_id
+FROM degrees
+GROUP BY department_id;
