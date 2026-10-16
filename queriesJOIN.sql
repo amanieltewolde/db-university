@@ -42,4 +42,20 @@ JOIN course_teacher
 ON courses.id = course_teacher.course_id 
 JOIN teachers
 ON course_teacher.teacher_id = teachers.id 
-ORDER BY degrees.name 
+ORDER BY degrees.name;
+
+-- 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
+-- Matematica (54)
+SELECT teachers.surname , teachers.name, departments.name AS department_name
+FROM teachers 
+JOIN course_teacher
+ON course_teacher.teacher_id = teachers.id 
+JOIN courses
+ON courses.id = course_teacher.course_id 
+JOIN degrees
+ON degrees.id = courses.degree_id 
+JOIN departments
+ON degrees.department_id = departments.id 
+WHERE   departments.id = 5
+GROUP BY teachers.id 
+ORDER BY teachers.surname, teachers.name ;
