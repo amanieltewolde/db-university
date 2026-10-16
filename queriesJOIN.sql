@@ -10,7 +10,7 @@ WHERE degrees.name = 'Corso di Laurea in Economia';
 SELECT degrees.name ,departments.name 
 FROM degrees
 JOIN departments
-ON degrees.department_id  = department_id
+ON degrees.department_id  = department.id
 WHERE departments.name = 'Dipartimento di Neuroscienze' AND degrees.`level` = 'magistrale';
 
 -- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
@@ -21,3 +21,7 @@ ON course_id = course_teacher.course_id
 JOIN teachers
 ON course_teacher.teacher_id = teacher_id 
 WHERE teachers.id = 44;
+
+-- 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
+-- sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
+-- nome
